@@ -1,0 +1,125 @@
+:root {
+    --background-color: #f8f0f7;
+    --foreground: #4b4453;
+    --primary: #f5d7e6;
+    --primary-hover: #f0c0d7;
+    --radius: 10px;
+    --blur-color: rgba(255, 182, 193, 0.6);
+}
+
+body {
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--background-color);
+    color: var(--foreground);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+}
+
+.blur {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    background: var(--blur-color);
+    filter: blur(80px);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    animation: blurAnimation 10s ease-in-out infinite;
+}
+
+@keyframes blurAnimation {
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.translation-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    background-color: var(--primary);
+    border-radius: var(--radius);
+    object-fit: cover;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.arrow-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--foreground);
+}
+
+.translation {
+    display: none;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: var(--foreground);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
