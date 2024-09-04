@@ -1,7 +1,7 @@
 // script.js
 document.addEventListener('DOMContentLoaded', () => {
     const queryParams = new URLSearchParams(window.location.search);
-    const imageToUpload = queryParams.get('img') || 'imagem1.jpg'; // Obter a imagem selecionada da URL
+    const imageToUpload = queryParams.get('img') || 'imagem1.jpeg'; // Obter a imagem selecionada da URL
     
     // Atualiza a imagem original com base nos parâmetros da URL
     const originalImageElement = document.getElementById('originalImage');
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const image = document.createElement('img');
             const imageMap = {
-                'imagem1.jpg': 'traducao1.jpg',
+                'imagem1.jpeg': 'traducao1.jpeg',
                 'imagem2.jpeg': 'traducao2.jpeg',
                 'imagem3.jpeg': 'traducao3.jpeg',
                 'imagem4.jpeg': 'traducao4.jpeg'
